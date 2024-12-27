@@ -291,8 +291,8 @@ Hide
 	SetFontSize 40
 	SetTextColor 255 149 0
 	SetBorderColor 255 149 0
-	MinimapIcon 1 Yellow Moon
-	CustomAlertSound "currency_t4.mp3" 300
+#	MinimapIcon 1 Yellow Moon
+#	CustomAlertSound "currency_t4.mp3" 300
 
 # 시련 열쇠 ======================================
 
