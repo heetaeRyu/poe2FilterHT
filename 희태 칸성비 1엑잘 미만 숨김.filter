@@ -354,12 +354,12 @@ Show
 	CustomAlertSound "currency_t2.mp3" 300
 
 # Currency Tier 3
-# 3티어 바알, 유리 직공, 연금술, 방어구 장인의 고철
-# 제왕, 하위 쥬얼러, 신비학자의 식각기, 기회의 파편, 숙련공의 파편, 숙련공의 오브, 대장장이의 숫돌
+# 3티어 바알, 유리 직공, 연금술, 방어구 장인의 고철, 기회의 파편, 숙련공의 오브
+# 제왕, 하위 쥬얼러, 신비학자의 식각기, 숙련공의 파편, 대장장이의 숫돌
 
 Show
 	Class "Stackable Currency"
-	BaseType "Vaal Orb" "Glassblower's Bauble" "Orb of Alchemy" "Armourer's Scrap"
+	BaseType "Vaal Orb" "Glassblower's Bauble" "Orb of Alchemy" "Armourer's Scrap" "Chance Shard" "Artificer's Orb"
 	SetFontSize 40
 	SetTextColor 0 0 0
 	SetBorderColor 0 0 0
@@ -370,7 +370,7 @@ Show
 
 Hide
 	Class "Stackable Currency"
-	BaseType "Regal Orb" "Lesser Jeweller's Orb" "Arcanist's Etcher" "Chance Shard" "Artificer's Shard" "Artificer's Orb" "Blacksmith's Whetstone"
+	BaseType "Regal Orb" "Lesser Jeweller's Orb" "Arcanist's Etcher" "Artificer's Shard" "Blacksmith's Whetstone"
 
 # Currency Tier 4
 # 4티어 경로석 6티어부터 중첩만 표시
