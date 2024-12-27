@@ -628,7 +628,7 @@ Show
 	ItemLevel >= 81
 	Class == "Crossbows"
 	BaseType == "Expert Forlorn Crossbow" "Expert Dyad Crossbow" "Expert Bombard Crossbow"
-	Rarity >= Maigic
+	Rarity >= Magic
 	SetFontSize 40
 	SetBorderColor 255 139 0
 	PlayEffect Red
@@ -640,7 +640,7 @@ Show
 	ItemLevel >= 76
 	Class == "Crossbows"
 	BaseType == "Expert Forlorn Crossbow" "Expert Dyad Crossbow" "Expert Bombard Crossbow"
-	Rarity >= Maigic
+	Rarity >= Magic
 	SetFontSize 35
 	SetBorderColor 255 139 0
 
@@ -703,7 +703,7 @@ Show
 	ItemLevel >= 81
 	Class == Foci
 	BaseType "Expert"
-	Rarity >= Maigic
+	Rarity >= Magic
 	SetFontSize 40
 	SetBorderColor 255 139 0
 	PlayEffect Red
@@ -726,7 +726,7 @@ Show
 #	HasImplicitMod True
 	Class == "Quarterstaves"
 	BaseType "Expert"
-	Rarity >= Maigic
+	Rarity >= Magic
 	SetFontSize 40
 	SetBorderColor 255 139 0
 	PlayEffect Red
@@ -749,7 +749,7 @@ Show
 	ItemLevel >= 81
 	Class == "Two Hand Maces"
 	BaseType "Cultist Greathammer" "Expert"
-	Rarity >= Maigic
+	Rarity >= Magic
 	SetFontSize 40
 	SetBorderColor 255 139 0
 	PlayEffect Red
@@ -771,7 +771,7 @@ Show
 	ItemLevel >= 81
 	Class == "Sceptres"
 	BaseType == "Rattling Sceptre"
-	Rarity >= Maigic
+	Rarity >= Magic
 	SetFontSize 40
 	SetBorderColor 255 139 0
 	PlayEffect Red
@@ -782,7 +782,7 @@ Hide
 	ItemLevel >= 76
 	Class == "Sceptres"
 	BaseType "Rattling Sceptre" "Omen Sceptre" "Expert"
-	Rarity >= Maigic
+	Rarity >= Magic
 	SetFontSize 35
 	SetBorderColor 255 139 0
 
@@ -802,7 +802,7 @@ Show
 	ItemLevel >= 81
 	Class == "Quivers"
 	BaseType == "Primed Quiver"
-	Rarity >= Maigic
+	Rarity >= Magic
 	SetFontSize 40
 	SetBorderColor 255 139 0
 	PlayEffect Red
@@ -813,7 +813,7 @@ Show
 	ItemLevel >= 76
 	Class == "Quivers"
 	BaseType == "Primed Quiver"
-	Rarity >= Maigic
+	Rarity >= Magic
 	SetFontSize 35
 	SetBorderColor 255 139 0
 
@@ -824,7 +824,7 @@ Show
 	ItemLevel >= 81
 	Class = "Body Armours"
 	BaseType "Expert Wayfarer Jacket" "Expert Studded Vest" "Expert Scalper's Jacket" "Expert Shaman Mantle" "Expert Cloaked Mail" "Expert Cloaked Mail" "Expert Sacrificial Mantle" "Expert Rogue Armour" "Expert Steel Plate"
-	Rarity >= Maigic
+	Rarity >= Magic
 	SetFontSize 40
 	SetBorderColor 255 139 0
 	PlayEffect Red
@@ -846,7 +846,7 @@ Show
 	ItemLevel >= 81
 	Class = "Gloves"
 	BaseType "Expert"
-	Rarity >= Maigic
+	Rarity >= Magic
 	SetFontSize 40
 	SetBorderColor 255 139 0
 	PlayEffect Red
@@ -869,7 +869,7 @@ Show
 	ItemLevel >= 81
 	Class == "Boots"
 	BaseType "Expert "
-	Rarity >= Maigic
+	Rarity >= Magic
 	SetFontSize 40
 	SetBorderColor 255 139 0
 	PlayEffect Red
@@ -892,7 +892,7 @@ Show
 	ItemLevel >= 81
 	Class == "Helmet"
 	BaseType "Expert"
-	Rarity >= Maigic
+	Rarity >= Magic
 	SetFontSize 40
 	SetBorderColor 255 139 0
 	PlayEffect Red
@@ -914,7 +914,7 @@ Show
 	ItemLevel >= 81
 	Class == "Shields"
 	BaseType "Expert"
-	Rarity >= Maigic
+	Rarity >= Magic
 	SetFontSize 40
 	SetBorderColor 255 139 0
 	PlayEffect Red
