@@ -2,13 +2,16 @@
 # Reim_Filter - (NeverSink Based) - for Path of Exile 2 Early Access
 #============================================================
 # ORIGINAL AUTHOR:   NeverSink
-# MODIFIED BY: 레임 (Reim)
+# MODIFIED BY: 희태
 # CUSTOM VERSION:   
-# LAST UPDATED: 12/18/2024
+# LAST UPDATED: 12/27/2024
 #
 # 안녕하세요, 레임입니다.
 # 네버싱크(Filterblade.xyz) 공식 버전 나오기전에는 계정 연동이 안됩니다.
 # 공식 사이트와 계정 연동 되기전에는 https://reims.tistory.com/ 에서 업데이트하세요.
+# 
+# 안녕하세요, 희태입니다.
+# 레임님의 필터를 기반으로 수정하였습니다.
 #
 # Youtube | https://www.youtube.com/@reim3d
 # Blog | https://reims.tistory.com/975
@@ -26,7 +29,7 @@
 # currency_t4 : 4티어 화폐
 # uniques : 유니크
 # map_normal : 기본 경로석
-# map_high : 11등급 이상의 경로석
+# map_high : 15등급 이상의 경로석
 # -- potion : 성유, 플라스크
 # logbook : 주문서, 탐험 일지에 어울리는 종이 소리
 # stack : 스택이 높은 아이템
@@ -54,8 +57,6 @@ Show
 	SetTextColor 175 96 37 #유니크 갈색
 	SetBorderColor 175 96 37 #유니크 갈색
 	SetBackgroundColor 20 20 0 #검정
-	PlayEffect Brown
-	MinimapIcon 1 Brown Star
 	CustomAlertSound "uniques.mp3" 300
 
 # 미가공 젬 ======================================================
@@ -109,7 +110,18 @@ Show
 	MinimapIcon 2 Green Pentagon
 	CustomAlertSound "currency_t1.mp3" 300
 
+Show
+	BaseType "Uncut Skill Gem"
+	ItemLevel = 19
+	SetFontSize 45
+	SetTextColor 135 210 189
+	SetBorderColor  135 210 189
+	PlayEffect Orange
+	MinimapIcon 2 Green Pentagon
+	CustomAlertSound "currency_t2.mp3" 300
+
 # 스킬 젬 - 맵핑 시 작게 표시 / 맵 아이콘과 기둥 표시 안함
+# 19 미만은 가림 (1ex 미만 가치)
 Hide
 	ItemLevel < 19
 	BaseType == "Uncut Skill Gem"
@@ -273,7 +285,7 @@ Show
 
 # 기폭제 - 모두 저렴함 ======================================
 
-Show
+Hide
 	Class == "Stackable Currency"
 	BaseType " Catalyst"
 	SetFontSize 40
@@ -342,11 +354,12 @@ Show
 	CustomAlertSound "currency_t2.mp3" 300
 
 # Currency Tier 3
-# 3티어 바알, 제왕, 유리 직공, 하위 쥬얼러, 연금술, 신비학자의 식각기, 방어구 장인의 고철, 대장장이의 숫돌, 숙련공의 오브, 기회의 파편, 숙련공의 파편
+# 3티어 바알, 유리 직공, 연금술, 방어구 장인의 고철
+# 제왕, 하위 쥬얼러, 신비학자의 식각기, 기회의 파편, 숙련공의 파편, 숙련공의 오브, 대장장이의 숫돌
 
 Show
 	Class "Stackable Currency"
-	BaseType "Vaal Orb" "Regal Orb"  "Glassblower's Bauble" "Lesser Jeweller's Orb" "Orb of Alchemy" "Arcanist's Etcher" "Armourer's Scrap" "Blacksmith's Whetstone" "Artificer's Orb" "Chance Shard" "Artificer's Shard"
+	BaseType "Vaal Orb" "Glassblower's Bauble" "Orb of Alchemy" "Armourer's Scrap"
 	SetFontSize 40
 	SetTextColor 0 0 0
 	SetBorderColor 0 0 0
@@ -355,10 +368,14 @@ Show
 	MinimapIcon 1 Yellow Circle
 	CustomAlertSound "currency_t3.mp3" 150
 
+Hide
+	Class "Stackable Currency"
+	BaseType "Regal Orb" "Lesser Jeweller's Orb" "Arcanist's Etcher" "Chance Shard" "Artificer's Shard" "Artificer's Orb" "Blacksmith's Whetstone"
+
 # Currency Tier 4
 # 4티어 경로석 6티어부터 중첩만 표시
 
-Show
+Hide
 	Class == "Stackable Currency"
 	BaseType "Orb of Transmutation" "Orb of Augmentation" "Regal Shard" 
 	AreaLevel >= 71
@@ -369,7 +386,7 @@ Show
 
 #Currency Tier 4
 # 6티어 이하 표시
-Show
+Hide
 	AreaLevel < 71
 	Class == "Stackable Currency"
 	BaseType == "Orb of Transmutation" "Orb of Augmentation" "Regal Shard" 
@@ -391,7 +408,7 @@ Show
 	CustomAlertSound "currency_t3.mp3" 150
 
 # 그 외 파편 / 경로석 6티어 이하까지만 표시
-Show
+Hide
 	AreaLevel < 71
 	Class "Stackable Currency"
 	BaseType "Shard"
@@ -553,16 +570,17 @@ Show
 # 제작 크래프팅
 # =========================================
 
-# 기회의 오브 | 무거운 허리띠, 담청색 목걸이, 별의 목걸이
+# 기회의 오브 | 무거운 허리띠(4ex), 담청색 목걸이(2ex), 별의 목걸이(15ex), 사파이어 링(30ex)
 Show
-	BaseType "Heavy Belt" "Azure Amulet" "Stellar Amulet"
+	BaseType "Heavy Belt" "Azure Amulet" "Stellar Amulet" "Sapphire Ring"
+	ItemLevel >= 78
 	SetFontSize 38
 	Rarity = Normal
 	SetTextColor 255 255 255
 	SetBorderColor 255 207 132
 	PlayEffect Grey
 	MinimapIcon 2 Grey Kite
-	CustomAlertSound "currency_t4.mp3" 300
+	CustomAlertSound "currency_t2.mp3" 300
 
 # 소켓 아이템 테두리 표시 ==============================
 
@@ -583,7 +601,7 @@ Show
 
 # 제작 크래프팅 활 =========================================
 
-# END 엔드급 | 이중 시위 활
+# END 엔드급 | 이중 시위 활, 전문 맹신자 활
 Show
 	ItemLevel >= 81
 	Class == "Bows"
@@ -760,7 +778,7 @@ Show
 	MinimapIcon 0 Red Star
 
 # STRICT 스트릭 | 76+ 덜컹대는 셉터, 징조 셉터, 전문
-Show
+Hide
 	ItemLevel >= 76
 	Class == "Sceptres"
 	BaseType "Rattling Sceptre" "Omen Sceptre" "Expert"
@@ -769,7 +787,7 @@ Show
 	SetBorderColor 255 139 0
 
 # 76렙 이하 테두리 강조
-Show
+Hide
 	ItemLevel < 76
 	Class == "Sceptres"
 	BaseType "Rattling Sceptre" "Omen Sceptre" "Expert"
@@ -779,11 +797,11 @@ Show
 
 # 제작 크래프팅 화살통 ==============================
 
-# END 엔드 | 81렙+ 준비된 화살통, 관통 화살통
+# END 엔드 | 81렙+ 준비된 화살통
 Show
 	ItemLevel >= 81
 	Class == "Quivers"
-	BaseType == "Primed Quiver" "Penetrating Quiver"
+	BaseType == "Primed Quiver"
 	Rarity >= Normal
 	SetFontSize 40
 	SetBorderColor 255 139 0
@@ -794,7 +812,7 @@ Show
 Show
 	ItemLevel >= 76
 	Class == "Quivers"
-	BaseType == "Primed Quiver" "Penetrating Quiver"
+	BaseType == "Primed Quiver"
 	Rarity >= Normal
 	SetFontSize 35
 	SetBorderColor 255 139 0
@@ -813,7 +831,7 @@ Show
 	MinimapIcon 2 Red Star
 
 # STRCT 스트릭 | 76렙+
-Show
+Hide
 	ItemLevel >= 76
 	Class = "Body Armours"
 	BaseType "Expert Scalper's Jacket" "Expert Wayfarer Jacket" "Expert Sacrificial Mantle" "Expert Shaman Mantle" "Expert Cloaked Mail" "Expert Rogue Armour" "Expert Keth Raiment" "Expert Altar Robe" "Assassin Garb" "Devout Garb" "Corvus Mantle" "Revered Vestments" "Tournament Mail" "Heroic Armour" "Arcane Robe" "Enlightened Robe"
@@ -835,7 +853,7 @@ Show
 #	MinimapIcon 0 Red Star
 
 # STRCT 스트릭 | 76렙+
-Show
+Hide
 	ItemLevel >= 76
 	Class = "Gloves"
 	BaseType "Expert" "Advanced"
@@ -903,7 +921,7 @@ Show
 #	MinimapIcon 0 Red Star
 
 # STRCT 스트릭 | 76렙+
-Show
+Hide
 	ItemLevel >= 76
 	Class == "Shields"
 	BaseType "Expert"
@@ -1016,10 +1034,10 @@ Show
 
 # 제작 크래프팅 특수 허리띠 ==============================
 
-Show
-	BaseType "Utility Belt"
-	Rarity >= Magic
-	SetBorderColor 255 139 0
+#Show
+#	BaseType "Utility Belt"
+#	Rarity >= Magic
+#	SetBorderColor 255 139 0
 
 # 크래프팅 고정 옵션 (테스트) ============================
 
@@ -1038,7 +1056,7 @@ Hide
 	Class "Flasks"
 
 # 극한의 플라스크 표시
-Show
+Hide
 	Rarity = Magic
 	BaseType = "Ultimate Life Flask" "Ultimate Mana Flask"
 	SetFontSize 35
@@ -1099,7 +1117,7 @@ Hide
 
 # 경로석 (지도) ========================================
 
-# 빨맵 11티어 이상 항상 표시
+# 빨맵 15티어 이상 항상 표시
 Show 
 	Class "Waystones"
 	WaystoneTier >= 15
