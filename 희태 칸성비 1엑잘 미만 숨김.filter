@@ -1059,6 +1059,7 @@ Hide
 Hide
 	Rarity = Magic
 	BaseType = "Ultimate Life Flask" "Ultimate Mana Flask"
+	Rarity <= Magic
 	SetFontSize 35
 	SetBorderColor  0 156 223 255
 
